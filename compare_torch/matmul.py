@@ -1,4 +1,4 @@
-# Hi, I do a matmul using torch
+# Run with tt-metal env
 
 import time
 import json

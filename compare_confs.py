@@ -9,7 +9,7 @@ import numpy as np
 MAT_SIZES = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]#, 2048]#, 4096]
 B = 100
 COMPILE_FIRST = True
-JUMP_FIRST_RUN = True
+JUMP_FIRST_RUN = False
 
 torch.manual_seed(42)
 
@@ -17,8 +17,7 @@ device = ttnn.open_device(device_id=0)
 
 grid = device.compute_with_storage_grid_size()  
 
-confs = [
-    {
+confs = [{
         "name":                     "hshard_HiFi_f32",
         "memory_config":            ttnn.L1_HEIGHT_SHARDED_MEMORY_CONFIG,
         "core_grid":                None,
@@ -27,8 +26,7 @@ confs = [
         # "max_mat_size":             1024,
         "ttnn_dtype":               ttnn.float32,
         "torch_dtype":              torch.float32,
-    },
-    {
+    },{
         "name":                     "wshard_HiFi_f32",
         "memory_config":            ttnn.L1_WIDTH_SHARDED_MEMORY_CONFIG,
         "core_grid":                None,
@@ -37,8 +35,7 @@ confs = [
         # "max_mat_size":             1024,
         "ttnn_dtype":               ttnn.float32,
         "torch_dtype":              torch.float32,
-    },
-    {
+    },{
         "name":                     "bshard_HiFi_f32",
         "memory_config":            ttnn.L1_BLOCK_SHARDED_MEMORY_CONFIG,
         "core_grid":                None,
@@ -50,8 +47,7 @@ confs = [
         # "max_mat_size":             1024,
         "ttnn_dtype":               ttnn.float32,
         "torch_dtype":              torch.float32,
-    },
-    {
+    },{
         "name":                     "bshard_LoFi_f32",
         "memory_config":            ttnn.L1_BLOCK_SHARDED_MEMORY_CONFIG,
         "core_grid":                None,
@@ -63,8 +59,7 @@ confs = [
         # "max_mat_size":             1024,
         "ttnn_dtype":               ttnn.float32,
         "torch_dtype":              torch.float32,
-    },
-    {
+    },{
         "name":                     "progcache_f32",
         "memory_config":            ttnn.L1_MEMORY_CONFIG, # faster than ttnn.DRAM_MEMORY_CONFIG
         "core_grid":                None,
