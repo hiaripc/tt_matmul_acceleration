@@ -1,0 +1,14 @@
+conf,m,k,n,use_trace,grid_size,in0_sharded,out_sharded,in0_storage_type,in1_storage_type,out_storage_type,dtype,math_fidelity,kernel_config_time,first_run_time,second_run_time,compile_time,transfer_time_in0,transfer_time_in1
+f16_m2,256,256,256,False,"(8, 8)",True,True,L1,DRAM,L1,DataType.BFLOAT16,MathFidelity.HiFi2,53.01,97251.54,362.15,96889.40,13346.35,0.00
+f16_m2,512,512,512,False,"(8, 8)",True,True,L1,DRAM,L1,DataType.BFLOAT16,MathFidelity.HiFi2,59.97,161776.30,389.20,161387.10,50035.99,0.00
+f16_m2,1024,1024,1024,False,"(8, 8)",True,True,L1,DRAM,L1,DataType.BFLOAT16,MathFidelity.HiFi2,67.87,101174.47,400.16,100774.31,194084.83,0.00
+f16_m2,2048,2048,2048,False,"(8, 8)",True,True,L1,DRAM,L1,DataType.BFLOAT16,MathFidelity.HiFi2,84.65,118638.02,688.90,117949.12,801226.66,0.00
+f16_m2,3072,3072,3072,False,"(8, 8)",False,False,DRAM,DRAM,DRAM,DataType.BFLOAT16,MathFidelity.HiFi2,75.23,199237.05,2239.12,196997.93,1787081.89,0.00
+f16_m2,4096,4096,4096,False,"(8, 8)",False,False,DRAM,DRAM,DRAM,DataType.BFLOAT16,MathFidelity.HiFi2,76.25,187756.31,4450.62,183305.69,3210758.33,0.00
+f16_m2,8192,8192,8192,False,"(8, 8)",False,False,DRAM,DRAM,DRAM,DataType.BFLOAT16,MathFidelity.HiFi2,70.96,208475.11,28066.19,180408.92,12382012.01,0.00
+f16_m4,256,256,256,False,"(8, 8)",True,True,L1,DRAM,L1,DataType.BFLOAT16,MathFidelity.HiFi4,55.71,82590.03,385.42,82204.61,13464.92,0.00
+f16_m4,512,512,512,False,"(8, 8)",True,True,L1,DRAM,L1,DataType.BFLOAT16,MathFidelity.HiFi4,63.32,82077.80,378.17,81699.63,50810.51,0.00
+f16_m4,1024,1024,1024,False,"(8, 8)",True,True,L1,DRAM,L1,DataType.BFLOAT16,MathFidelity.HiFi4,63.62,84262.49,392.76,83869.73,192805.64,0.00
+f16_m4,2048,2048,2048,False,"(8, 8)",True,True,L1,DRAM,L1,DataType.BFLOAT16,MathFidelity.HiFi4,83.23,102883.87,950.90,101932.97,799375.52,0.00
+f16_m4,3072,3072,3072,False,"(8, 8)",False,False,DRAM,DRAM,DRAM,DataType.BFLOAT16,MathFidelity.HiFi4,66.25,97803.91,3063.99,94739.92,1744033.78,0.00
+f16_m4,4096,4096,4096,False,"(8, 8)",False,False,DRAM,DRAM,DRAM,DataType.BFLOAT16,MathFidelity.HiFi4,64.91,106037.36,6347.49,99689.87,3117368.21,0.00
