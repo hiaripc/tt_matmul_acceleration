@@ -1,7 +1,0 @@
-m,k,n,use_trace,grid_size,in0_sharded,out_sharded,in0_storage_type,in1_storage_type,out_storage_type,dtype,math_fidelity,inference_time_avg,trace_time,offloading_time_in0,offloading_time_in1,TFLOPs (avg),Utilization (vs user grid),Utilization (vs 8x8 full grid)
-4096,4096,4096,False,"(8, 8)",DRAM,DRAM,DRAM,DataType.BFLOAT16,MathFidelity.HiFi2,4738.01,29.01,22.13%,16.10%
-4096,4096,4096,True,"(8, 8)",DRAM,DRAM,DRAM,DataType.BFLOAT16,MathFidelity.HiFi2,4492.30,30.59,23.34%,16.98%
-4096,4096,4096,False,"(8, 8)",DRAM,DRAM,DRAM,DataType.BFLOAT8_B,MathFidelity.LoFi,2799.71,49.09,18.73%,13.62%
-4096,4096,4096,True,"(8, 8)",DRAM,DRAM,DRAM,DataType.BFLOAT8_B,MathFidelity.LoFi,2657.52,51.72,19.73%,14.35%
-4096,4096,4096,False,"(8, 8)",DRAM,DRAM,DRAM,DataType.BFLOAT4_B,MathFidelity.LoFi,2485.62,55.29,21.09%,15.34%
-4096,4096,4096,True,"(8, 8)",DRAM,DRAM,DRAM,DataType.BFLOAT4_B,MathFidelity.LoFi,2363.69,58.15,22.18%,16.13%
