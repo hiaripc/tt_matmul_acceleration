@@ -1,1 +1,0 @@
-conf,m,use_trace,grid_size,in0_sharded,out_sharded,in0_storage_type,in1_storage_type,out_storage_type,dtype,math_fidelity,first_run_time,inference_time_avg,trace_time,transfer_time_in0,transfer_time_in1,TFLOPs (avg),"Utilization (vs (8, 8) user grid)",Utilization (vs 8x11 full grid)
