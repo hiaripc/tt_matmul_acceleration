@@ -1,15 +1,27 @@
 import torch
 import time
 import csv
+import os
 
-test_name = "torch_fp16"
+dir_test = "../results/"
+test_name = "torch_fp32_cores"
+core_selections = [1, 2, 4, 8]
+# mat_sizes = [256, 512, 1024, 2048, 3072, 4096, 5120]
+mat_sizes = [6144, 7128]
+n_exec = 100
+dtype = torch.float32
 
-with open(f"../results/{test_name}.csv", "w") as f:
+cores = os.getenv("OMP_NUM_THREADS")
+
+file_path = dir_test + test_name + ".csv"
+# Check if the file exists
+if not os.path.exists(file_path):
+    # Create the file and write the header line
+    with open(file_path, "w") as file:
+        file.write("cores, line\n")
+
+with open(file_path, "a") as f:
     writer = csv.writer(f)
-    writer.writerow(["m", test_name])
-    n_exec = 100
-    dtype = torch.float32
-    mat_sizes = [256, 512, 1024, 2048, 3072, 4096, 8192 ]
     for shape in mat_sizes:
         print(f"\nCalculating {shape} matmul ... ")
         in0 = torch.ones((shape, shape), dtype=dtype)
@@ -21,4 +33,4 @@ with open(f"../results/{test_name}.csv", "w") as f:
         tot_time /= n_exec
         tot_time *= 1e6
         print(f"Avg time: {tot_time}")
-        writer.writerow([shape, tot_time])
+        writer.writerow([cores, shape, tot_time])
